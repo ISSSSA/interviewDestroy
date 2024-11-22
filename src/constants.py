@@ -1,4 +1,4 @@
-INTERVIEW_POSTION = "python developer"
+INTERVIEW_POSTION = "Data Scientist"
 OPENAI_API_KEY = "sk-PK0sP2TKeaxlqGb5eanDfat524iy0ZOj"
 
 OUTPUT_FILE_NAME = "out.wav"  # audio file name.
