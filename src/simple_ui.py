@@ -41,16 +41,13 @@ record_status_button = sg.Button(
     metadata=BtnInfo(),
 )
 analyzed_text_label = get_text_area("", size=(APPLICATION_WIDTH, 2))
-quick_chat_gpt_answer = get_text_area("", size=(APPLICATION_WIDTH, 5))
-full_chat_gpt_answer = get_text_area("", size=(APPLICATION_WIDTH, 12))
+full_chat_gpt_answer = get_text_area("", size=(APPLICATION_WIDTH, 30))
 
 
 layout = [
     [sg.Text("Нажмите R для записи", size=(int(APPLICATION_WIDTH * 0.8), 2)), record_status_button],
     [sg.Text("Нажмите A для распознания и ответа")],
     [analyzed_text_label],
-    [sg.Text("Короткий ответ:")],
-    [quick_chat_gpt_answer],
     [sg.Text("Полный ответ:")],
     [full_chat_gpt_answer],
     [sg.Button("Выйти")],
@@ -92,11 +89,11 @@ while True:
         analyzed_text_label.update(audio_transcript)
 
         # Generate quick answer:
-        quick_chat_gpt_answer.update("Chatgpt is working...")
-        WINDOW.perform_long_operation(
-            lambda: llm.generate_answer(audio_transcript, short_answer=True, temperature=0),
-            "-CHAT_GPT SHORT ANSWER-",
-        )
+        # quick_chat_gpt_answer.update("Chatgpt is working...")
+        # WINDOW.perform_long_operation(
+        #     lambda: llm.generate_answer(audio_transcript, short_answer=True, temperature=0),
+        #     "-CHAT_GPT SHORT ANSWER-",
+        # )
 
         # Generate full answer:
         full_chat_gpt_answer.update("Chatgpt is working...")
