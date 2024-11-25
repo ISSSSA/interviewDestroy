@@ -1,5 +1,5 @@
 INTERVIEW_POSTION = "Data Scientist"
-OPENAI_API_KEY = "sk-PK0sP2TKeaxlqGb5eanDfat524iy0ZOj"
+OPENAI_API_KEY = ""
 
 OUTPUT_FILE_NAME = "out.wav"  # audio file name.
 

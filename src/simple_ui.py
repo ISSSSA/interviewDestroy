@@ -52,7 +52,7 @@ layout = [
     [full_chat_gpt_answer],
     [sg.Button("Выйти")],
 ]
-WINDOW = sg.Window("Колька Бот 2.0", layout, return_keyboard_events=True, use_default_focus=False)
+WINDOW = sg.Window("Interview Destoyer", layout, return_keyboard_events=True, use_default_focus=False)
 
 
 def background_recording_loop() -> None:
@@ -101,7 +101,5 @@ while True:
             lambda: llm.generate_answer(audio_transcript, short_answer=False, temperature=0.7),
             "-CHAT_GPT LONG ANSWER-",
         )
-    elif event == "-CHAT_GPT SHORT ANSWER-":
-        quick_chat_gpt_answer.update(values["-CHAT_GPT SHORT ANSWER-"])
     elif event == "-CHAT_GPT LONG ANSWER-":
         full_chat_gpt_answer.update(values["-CHAT_GPT LONG ANSWER-"])
