@@ -7,16 +7,6 @@ from src.constants import APPLICATION_WIDTH, OFF_IMAGE, ON_IMAGE
 
 
 def get_text_area(text: str, size: tuple) -> sg.Text:
-    """
-    Create a text area widget with the given text and size.
-
-    Parameters:r
-        text (str): The initial text to display in the text area.
-        size (tuple): The size of the text area widget.
-
-    Returns:
-        sg.Text: The created text area widget.
-    """
     return sg.Text(
         text,
         size=size,
@@ -87,15 +77,6 @@ while True:
     elif event == "-WHISPER COMPLETED-":
         audio_transcript = values["-WHISPER COMPLETED-"]
         analyzed_text_label.update(audio_transcript)
-
-        # Generate quick answer:
-        # quick_chat_gpt_answer.update("Chatgpt is working...")
-        # WINDOW.perform_long_operation(
-        #     lambda: llm.generate_answer(audio_transcript, short_answer=True, temperature=0),
-        #     "-CHAT_GPT SHORT ANSWER-",
-        # )
-
-        # Generate full answer:
         full_chat_gpt_answer.update("Chatgpt is working...")
         WINDOW.perform_long_operation(
             lambda: llm.generate_answer(audio_transcript, short_answer=False, temperature=0.7),
